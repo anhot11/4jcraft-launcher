@@ -69,8 +69,7 @@
     -->
     <application android:label="Minecraft Console Edition (4jcraft)"
         android:allowBackup="true"
-        android:hardwareAccelerated="true"
-        android:allowNativeHeapPointerTagging="false" >
+        android:hardwareAccelerated="true" >
 <!--    android:icon="@drawable/ic_launcher" -->
 
         <!-- Example of setting SDL hints from AndroidManifest.xml:
@@ -97,7 +96,6 @@
             android:alwaysRetainTaskState="true"
             android:launchMode="singleInstance"
             android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
-            android:preferMinimalPostProcessing="true"
             android:screenOrientation="landscape">
             <meta-data android:name="android.max_aspect" android:value="2.1" />
             <intent-filter>

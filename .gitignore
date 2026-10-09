@@ -2,3 +2,8 @@ gen/
 bin/
 *.o
 scripts/__pycache__/
+build/
+.lock-waf*
+.waf*
+__pycache__/
+*.pyc

@@ -198,7 +198,7 @@ class d8(DexerTask):
 	vars = ['D8', 'D8_FLAGS', 'OUTDIR', 'CLASSPATH_ANDROID', 'D8_CLASSPATH' ]
 
 class dx(DexerTask):
-	run_str = '${DX} --dex ${D8_FLAGS} --output=${TGT} ${SRC} ${DX_CLASSPATH}'
+	run_str = '${DX} --dex --min-sdk-version=26 ${D8_FLAGS} --output=${TGT} ${SRC} ${DX_CLASSPATH}'
 	vars = ['DX', 'D8_FLAGS', 'OUTDIR']
 
 def custom_runnable_status(self):
@@ -340,7 +340,7 @@ def apply_d8(self):
 		self.env.KS_PASS  = "pass:" + self.env.JKEYPASS2
 		self.env.KEY_PASS = "pass:" + self.env.JKEYPASSW
 
-		self.apksigner_task = self.create_task('apksigner' if not self.env.termux else 'apksigner_termux',
+		self.apksigner_task = self.create_task('apksigner',
 			self.outdir.make_node(self.env.OUTAPK),
 			self.outdir.make_node(self.env.OUTAPK_SIGNED))
 	except AttributeError:
